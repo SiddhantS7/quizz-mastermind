@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 100% 96%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 100% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 60%;
+
+    --radius: 1.25rem;
+
+    /* Quiz specific tokens */
+    --quiz-bg-start: 210 100% 96%;
+    --quiz-bg-end: 217 91% 85%;
+    --quiz-card: 0 0% 100%;
+    --quiz-question-bg: 210 100% 95%;
+    --quiz-option-start: 217 91% 60%;
+    --quiz-option-end: 199 89% 48%;
+    --quiz-option-hover-start: 217 91% 55%;
+    --quiz-option-hover-end: 199 89% 43%;
+    --quiz-progress-active: 217 91% 45%;
+    --quiz-progress-inactive: 210 40% 90%;
+    --quiz-nav-bg: 217 91% 45%;
+    --quiz-score: 217 91% 45%;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 15%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 15%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 213 27% 84%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-nunito;
+  }
+}
+
+@layer utilities {
+  .quiz-gradient-bg {
+    background: linear-gradient(135deg, hsl(var(--quiz-bg-start)) 0%, hsl(var(--quiz-bg-end)) 100%);
+  }
+
+  .quiz-option-gradient {
+    background: linear-gradient(135deg, hsl(var(--quiz-option-start)) 0%, hsl(var(--quiz-option-end)) 100%);
+  }
+
+  .quiz-option-gradient-hover {
+    background: linear-gradient(135deg, hsl(var(--quiz-option-hover-start)) 0%, hsl(var(--quiz-option-hover-end)) 100%);
+  }
+
+  .quiz-card-shadow {
+    box-shadow: 
+      0 4px 6px -1px rgba(0, 0, 0, 0.05),
+      0 10px 30px -5px rgba(0, 0, 0, 0.1),
+      0 0 0 1px rgba(0, 0, 0, 0.02);
+  }
+}
